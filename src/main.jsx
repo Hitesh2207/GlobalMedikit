@@ -300,7 +300,7 @@ function Logo() {
   return (
     <img
       className="brand-logo"
-      src="/assets/global-medikit-logo.svg"
+      src="/assets/Medikit-logo-Final.svg"
       onError={(e) => {
         e.currentTarget.src = "/assets/Medikit-logo-Final.svg";
       }}
