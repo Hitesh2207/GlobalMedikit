@@ -302,7 +302,7 @@ function Logo() {
       className="brand-logo"
       src="/assets/global-medikit-logo.svg"
       onError={(e) => {
-        e.currentTarget.src = "/assets/logo-placeholder.png";
+        e.currentTarget.src = "/assets/Medikit-logo-Final.svg";
       }}
       alt="Global Medikit"
     />
