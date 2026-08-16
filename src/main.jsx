@@ -300,10 +300,11 @@ function Logo() {
   return (
     <img
       className="brand-logo"
-      src="/assets/Medikit-logo-Final.svg"
-      onError={(e) => {
-        e.currentTarget.src = "/assets/Medikit-logo-Final.svg";
-      }}
+      // src="/assets/Medikit-logo-Final.svg"
+      src={`${import.meta.env.BASE_URL}assets/Medikit-logo-Final.svg`}
+      // onError={(e) => {
+      //   e.currentTarget.src = "/assets/Medikit-logo-Final.svg";
+      // }}
       alt="Global Medikit"
     />
   );
