@@ -1,0 +1,16 @@
+export const markets = [
+  ["IN", "🇮🇳", "India", "en"],
+  ["AE", "🇦🇪", "United Arab Emirates", "ar"],
+  ["SA", "🇸🇦", "Saudi Arabia", "ar"],
+  ["FR", "🇫🇷", "France", "fr"],
+  ["DE", "🇩🇪", "Germany", "de"],
+  ["ES", "🇪🇸", "Spain", "es"],
+  ["IT", "🇮🇹", "Italy", "it"],
+  ["BR", "🇧🇷", "Brazil", "pt"],
+  ["CN", "🇨🇳", "China", "zh"],
+  ["JP", "🇯🇵", "Japan", "ja"],
+  ["KR", "🇰🇷", "South Korea", "ko"],
+  ["RU", "🇷🇺", "Russia", "ru"],
+  ["US", "🇺🇸", "United States", "en"],
+  ["GB", "🇬🇧", "United Kingdom", "en"],
+].map(([code, flag, name, language]) => ({ code, flag, name, language }));
