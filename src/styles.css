@@ -101,11 +101,7 @@ button {
 }
 
 .nav button {
-<<<<<<< HEAD
     font-size: 12px;
-=======
-    font-size: 14px;
->>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
     padding: 10px 9px;
     color: #4e696f;
     display: flex;
@@ -2489,7 +2485,6 @@ footer {
         font-size: 30px
     }
     
-<<<<<<< HEAD
 }
 
 .market-switcher {
@@ -2525,6 +2520,5 @@ footer {
     .market-switcher select+select {
         flex: 0 0 70px
     }
-=======
->>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
+
 }
