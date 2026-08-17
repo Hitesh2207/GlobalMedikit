@@ -2191,9 +2191,9 @@ footer {
         justify-content: flex-start
     }
 
-    .product-mega {
+    /* .product-mega {
         display: none
-    }
+    } */
 
     .find-button span {
         display: none
@@ -2719,4 +2719,512 @@ footer {
         min-width: 36px;
         height: 36px;
     }
+}
+
+/* =========================================
+   MOBILE PRODUCT MENU
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+    /* Product mega menu is allowed on mobile */
+    .product-mega {
+        display: block;
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        top: 78px;
+        z-index: 1100;
+
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+
+        box-shadow: 0 20px 45px rgba(7, 55, 70, .15);
+
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+    }
+
+    .mega-inner {
+        display: block;
+        padding: 20px;
+    }
+
+    .mega-title {
+        margin-bottom: 18px;
+    }
+
+    .mega-title h3 {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .mega-title p {
+        max-width: none;
+        font-size: 13px;
+    }
+
+    /* Product categories */
+    .mega-cats {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .mega-cats button {
+        min-height: 70px;
+        padding: 10px;
+    }
+
+    .mega-cats b {
+        font-size: 10px;
+    }
+
+    .mega-cats small {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .product-mega {
+        left: 8px;
+        right: 8px;
+        top: 68px;
+        max-height: calc(100vh - 75px);
+    }
+
+    .mega-inner {
+        padding: 15px;
+    }
+
+    .mega-title h3 {
+        font-size: 20px;
+    }
+
+    .mega-title p {
+        font-size: 12px;
+    }
+
+    .mega-cats {
+        grid-template-columns: 1fr;
+    }
+
+    .mega-cats button {
+        min-height: 64px;
+    }
+}
+
+/* =====================================================
+   MOBILE PRODUCT FILTER
+   ===================================================== */
+
+.mobile-filter-button {
+    display: none;
+}
+
+.mobile-filter-overlay {
+    display: none;
+}
+
+
+/* =====================================================
+   DESKTOP FILTER IMPROVEMENTS
+   ===================================================== */
+
+.filter-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px 12px;
+}
+
+.filter-heading > span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: #60777c;
+}
+
+.clear-filter {
+    border: 0;
+    background: transparent;
+    color: #07877b;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-check {
+    color: #07877b;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 650px) {
+
+    /* Hide desktop filter */
+    .filters {
+        display: none !important;
+    }
+
+
+    /* Filter button */
+    .mobile-filter-button {
+        width: 100%;
+        height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 14px;
+
+        margin: 0 0 18px;
+
+        border: 1px solid #cbdcd9;
+        border-radius: 4px;
+
+        background: #ffffff;
+
+        color: #173b43;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-filter-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobile-filter-left svg {
+        color: #07877b;
+    }
+
+    .mobile-filter-left b {
+        font-size: 13px;
+        letter-spacing: .01em;
+    }
+
+
+    .mobile-filter-right {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        color: #6d8084;
+
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+
+    /* =================================================
+       OVERLAY
+       ================================================= */
+
+    .mobile-filter-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 5000;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        background: rgba(8, 39, 46, .45);
+
+        backdrop-filter: blur(2px);
+    }
+
+
+    /* =================================================
+       FILTER PANEL
+       ================================================= */
+
+    .mobile-filter-panel {
+        width: 100%;
+
+        max-height: 88vh;
+
+        background: #ffffff;
+
+        border-radius: 18px 18px 0 0;
+
+        box-shadow:
+            0 -15px 50px rgba(10, 45, 52, .18);
+
+        display: flex;
+
+        flex-direction: column;
+
+        overflow: hidden;
+
+        animation: mobileFilterUp .22s ease-out;
+    }
+
+
+    @keyframes mobileFilterUp {
+
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+
+    }
+
+
+    /* =================================================
+       HEADER
+       ================================================= */
+
+    .mobile-filter-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 20px 20px 16px;
+
+        border-bottom: 1px solid #e4eceb;
+    }
+
+
+    .mobile-filter-header span {
+        display: block;
+
+        margin-bottom: 5px;
+
+        color: #07877b;
+
+        font-size: 8px;
+
+        font-weight: 800;
+
+        letter-spacing: .16em;
+    }
+
+
+    .mobile-filter-header h3 {
+        margin: 0;
+
+        color: #173b43;
+
+        font-size: 22px;
+
+        line-height: 1.1;
+    }
+
+
+    .mobile-filter-header > button {
+        width: 38px;
+        height: 38px;
+
+        display: grid;
+        place-items: center;
+
+        border: 1px solid #d9e5e3;
+
+        border-radius: 50%;
+
+        background: #ffffff;
+
+        color: #173b43;
+    }
+
+
+    /* =================================================
+       OPTIONS
+       ================================================= */
+
+    .mobile-filter-options {
+
+        overflow-y: auto;
+
+        padding: 8px 20px 16px;
+    }
+
+
+    .mobile-filter-options > button {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        border: 0;
+
+        border-bottom: 1px solid #edf2f1;
+
+        background: transparent;
+
+        color: #244b53;
+
+        text-align: left;
+
+        font-size: 13px;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-filter-options > button:last-child {
+        border-bottom: 0;
+    }
+
+
+    .mobile-filter-options > button.active {
+        color: #07877b;
+
+        font-weight: 700;
+    }
+
+
+    /* Radio circle */
+
+    .filter-radio {
+
+        width: 20px;
+        height: 20px;
+
+        min-width: 20px;
+
+        display: grid;
+        place-items: center;
+
+        border: 1.5px solid #b9ceca;
+
+        border-radius: 50%;
+
+        color: #ffffff;
+
+        font-size: 11px;
+
+        box-sizing: border-box;
+    }
+
+
+    .mobile-filter-options > button.active .filter-radio {
+
+        border-color: #07877b;
+
+        background: #07877b;
+    }
+
+
+    .mobile-filter-options small {
+
+        margin-left: auto;
+
+        color: #8a9b9f;
+
+        font-size: 10px;
+    }
+
+
+    /* =================================================
+       FOOTER
+       ================================================= */
+
+    .mobile-filter-footer {
+
+        display: flex;
+
+        gap: 10px;
+
+        padding: 14px 20px;
+
+        border-top: 1px solid #e4eceb;
+
+        background: #ffffff;
+    }
+
+
+    .mobile-clear-filter {
+
+        width: 35%;
+
+        height: 46px;
+
+        border: 1px solid #cbdcd9;
+
+        background: #ffffff;
+
+        color: #31565e;
+
+        font-weight: 700;
+
+        border-radius: 4px;
+    }
+
+
+    .mobile-apply-filter {
+
+        flex: 1;
+
+        height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        border: 0;
+
+        border-radius: 4px;
+
+        background: #07877b;
+
+        color: #ffffff;
+
+        font-weight: 700;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .mobile-filter-button {
+        height: 48px;
+    }
+
+    .mobile-filter-left b {
+        font-size: 12px;
+    }
+
+    .mobile-filter-header h3 {
+        font-size: 20px;
+    }
+
 }

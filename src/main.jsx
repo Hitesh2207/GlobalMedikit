@@ -33,7 +33,7 @@ import {
   Stethoscope,
   Boxes,
   Users,
-  CalendarDays,
+  CalendarDays
 } from "lucide-react";
 import "./styles.css";
 import {
@@ -417,7 +417,10 @@ function App() {
               className="products-nav"
               onClick={() => setProductMenu(!productMenu)}
             >
-              Products <ChevronDown size={14} />
+              Products <ChevronDown size={14} style={{
+                transform: productMenu ? "rotate(180deg)" : "rotate(0deg)",
+                transition: "transform .2s ease"
+              }} />
             </button>
             <button onClick={() => go("quality")}>Quality</button>
             <button onClick={() => go("manufacturing")}>Manufacturing</button>
@@ -963,6 +966,9 @@ function Products({
   add,
   setSelected,
 }) {
+
+  const [mobileFilterOpen, setMobileFilterOpen] = React.useState(false);
+
   return (
     <main className="inner">
       <PageHero
@@ -990,7 +996,177 @@ function Products({
             <span>{products.length} products shown</span>
           </div>
           <div className="catalogue-layout">
+            {/* MOBILE FILTER BUTTON */}
+
+            <button
+              className="mobile-filter-button"
+              onClick={() => setMobileFilterOpen(true)}
+            >
+              <span className="mobile-filter-left">
+                <SlidersHorizontal size={18} />
+                <b>Filter Products</b>
+              </span>
+
+              <span className="mobile-filter-right">
+                {category === "all" ? "All" : "1 selected"}
+                <ChevronRight size={18} />
+              </span>
+            </button>
+
+
+            {/* DESKTOP FILTER */}
+
             <aside className="filters">
+
+              <div className="filter-heading">
+                <span>FILTER PRODUCTS</span>
+
+                {category !== "all" && (
+                  <button
+                    className="clear-filter"
+                    onClick={() => setCategory("all")}
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+
+              <button
+                className={category === "all" ? "active" : ""}
+                onClick={() => setCategory("all")}
+              >
+                <span>All products</span>
+                <span>{products.length}</span>
+              </button>
+
+              {categories.map((c) => (
+                <button
+                  key={c.id}
+                  className={category === c.id ? "active" : ""}
+                  onClick={() => setCategory(c.id)}
+                >
+                  <span>{c.name}</span>
+
+                  {category === c.id ? (
+                    <span className="filter-check">✓</span>
+                  ) : (
+                    <ChevronRight size={13} />
+                  )}
+                </button>
+              ))}
+
+              <div className="catalogue-download">
+                <Download />
+
+                <b>Need the catalogue?</b>
+
+                <p>
+                  Request the latest GloBrand or MediBrand catalogue.
+                </p>
+
+                <button>
+                  Request catalogue
+                </button>
+              </div>
+
+            </aside>
+
+
+            {/* MOBILE FILTER PANEL */}
+
+            {mobileFilterOpen && (
+              <div
+                className="mobile-filter-overlay"
+                onClick={() => setMobileFilterOpen(false)}
+              >
+
+                <div
+                  className="mobile-filter-panel"
+                  onClick={(e) => e.stopPropagation()}
+                >
+
+                  <div className="mobile-filter-header">
+
+                    <div>
+                      <span>PRODUCT CATALOGUE</span>
+                      <h3>Filter products</h3>
+                    </div>
+
+                    <button
+                      onClick={() => setMobileFilterOpen(false)}
+                      aria-label="Close filters"
+                    >
+                      <X size={22} />
+                    </button>
+
+                  </div>
+
+
+                  <div className="mobile-filter-options">
+
+                    <button
+                      className={category === "all" ? "active" : ""}
+                      onClick={() => setCategory("all")}
+                    >
+                      <span className="filter-radio">
+                        {category === "all" && "✓"}
+                      </span>
+
+                      <span>All products</span>
+
+                      <small>{products.length}</small>
+                    </button>
+
+
+                    {categories.map((c) => (
+
+                      <button
+                        key={c.id}
+                        className={category === c.id ? "active" : ""}
+                        onClick={() => setCategory(c.id)}
+                      >
+
+                        <span className="filter-radio">
+                          {category === c.id && "✓"}
+                        </span>
+
+                        <span>{c.name}</span>
+
+                        {category === c.id && (
+                          <small>Selected</small>
+                        )}
+
+                      </button>
+
+                    ))}
+
+                  </div>
+
+
+                  <div className="mobile-filter-footer">
+
+                    <button
+                      className="mobile-clear-filter"
+                      onClick={() => setCategory("all")}
+                    >
+                      Clear
+                    </button>
+
+                    <button
+                      className="mobile-apply-filter"
+                      onClick={() => setMobileFilterOpen(false)}
+                    >
+                      Apply Filter
+                      <ArrowRight size={16} />
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+            )}
+            {/* <aside className="filters">
               <b>FILTER PRODUCTS</b>
               <button
                 className={category === "all" ? "active" : ""}
@@ -1014,7 +1190,7 @@ function Products({
                 <p>Request the latest GloBrand or MediBrand catalogue.</p>
                 <button>Request catalogue</button>
               </div>
-            </aside>
+            </aside> */}
             <div className="catalogue-products">
               {products.map((p) => (
                 <ProductCard
