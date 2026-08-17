@@ -36,11 +36,14 @@ import {
   CalendarDays,
 } from "lucide-react";
 import "./styles.css";
+<<<<<<< HEAD
 import {
   InternationalProvider,
   MarketLanguageSwitcher,
   useInternational,
 } from "./i18n/International";
+=======
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
 
 const categories = [
   {
@@ -287,6 +290,17 @@ function ProductVisual({ kind = "device", small = false }) {
           <div className="blood-spike" />
         </>
       )}
+<<<<<<< HEAD
+=======
+      {kind === "ivcatheter" && (
+        <>
+          <div className="iv-chamber" />
+          <div className="iv-line" />
+          <div className="catheter-main" />
+          <div className="catheter-hub" />
+        </>
+      )}
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
       {kind === "device" && <div className="generic-device" />}
       <span className="visual-mark">GLOBAL MEDIKIT</span>
     </div>
@@ -297,8 +311,13 @@ function Logo() {
   return (
     <img
       className="brand-logo"
+<<<<<<< HEAD
       src={`${import.meta.env.BASE_URL}assets/Medikit-logo-Final.svg`}
       // src="/assets/Medikit-logo-Final.svg"
+=======
+      // src="/assets/Medikit-logo-Final.svg"
+      src={`${import.meta.env.BASE_URL}assets/Medikit-logo-Final.svg`}
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
       // onError={(e) => {
       //   e.currentTarget.src = "/assets/Medikit-logo-Final.svg";
       // }}
@@ -308,7 +327,10 @@ function Logo() {
 }
 
 function App() {
+<<<<<<< HEAD
   const { t, currentMarket } = useInternational();
+=======
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
   const [page, setPage] = useState("home");
   const [menu, setMenu] = useState(false);
   const [productMenu, setProductMenu] = useState(false);
@@ -387,9 +409,12 @@ function App() {
           <span>Medical Devices • Hospital Products • International B2B</span>
           <div>
             <span>65+ Countries</span>
+<<<<<<< HEAD
             <span>
               {currentMarket.flag} {currentMarket.name}
             </span>
+=======
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
             <span>ISO 13485</span>
             <span>EU MDR</span>
           </div>
@@ -417,7 +442,10 @@ function App() {
             <button onClick={() => go("contact")}>Contact</button>
           </nav>
           <div className="head-actions">
+<<<<<<< HEAD
             <MarketLanguageSwitcher />
+=======
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
             <button className="find-button" onClick={() => go("products")}>
               <Search size={16} />
               <span>Find product</span>
@@ -1192,6 +1220,37 @@ function Quality() {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
+=======
+      {/* <section className="section paper">
+        <div className="wrap cert-grid">
+          <div className="cert-panel">
+            <span>EU MDR</span>
+            <b>2017/745</b>
+            <small>Medical device regulatory framework</small>
+            <button>
+              View documentation <ExternalLink size={14} />
+            </button>
+          </div>
+          <div className="cert-panel">
+            <span>QUALITY</span>
+            <b>ISO 13485:2016</b>
+            <small>Medical devices quality management system</small>
+            <button>
+              View certificate <ExternalLink size={14} />
+            </button>
+          </div>
+          <div className="cert-panel">
+            <span>FACILITY</span>
+            <b>Controlled manufacturing</b>
+            <small>HVAC, HEPA and environmental controls</small>
+            <button>
+              Manufacturing details <ArrowRight size={14} />
+            </button>
+          </div>
+        </div>
+      </section> */}
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
     </main>
   );
 }
@@ -1265,6 +1324,40 @@ function Manufacturing() {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
+=======
+      {/* <section className="section">
+        <div className="wrap">
+          <span className="section-number">02 / PRODUCT DEVELOPMENT</span>
+          <div className="rd-grid">
+            <div>
+              <Microscope />
+              <h3>Materials & engineering</h3>
+              <p>
+                In-house development capability supports medical-device design,
+                manufacturing techniques and practical production answers.
+              </p>
+            </div>
+            <div>
+              <FlaskConical />
+              <h3>Testing & verification</h3>
+              <p>
+                Product quality is supported by testing disciplines spanning
+                physical, chemical, microbiological and visual checks.
+              </p>
+            </div>
+            <div>
+              <ShieldCheck />
+              <h3>Patient-friendly design</h3>
+              <p>
+                The company positions patient comfort and safer use as key
+                considerations in product development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
     </main>
   );
 }
@@ -1645,8 +1738,12 @@ function Footer({ go }) {
   );
 }
 
+<<<<<<< HEAD
 createRoot(document.getElementById("root")).render(
   <InternationalProvider>
     <App />
   </InternationalProvider>,
 );
+=======
+createRoot(document.getElementById("root")).render(<App />);
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a

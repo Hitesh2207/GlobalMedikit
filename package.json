@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
+<<<<<<< HEAD
     "vite": "^7.1.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -17,3 +18,14 @@
   },
   "devDependencies": {}
 }
+=======
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
+>>>>>>> 9f049f3f2fc698f1e80361bbe0ed54921074b25a
